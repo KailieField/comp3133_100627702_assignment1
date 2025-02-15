@@ -14,10 +14,13 @@ mongoose.connect(process.env.DB_CONNECT)
 
 //---GRAPHQL API ENDPOINTS
 app.use(
+
     "/graphql",
     graphqlHTTP({
+
         schema, 
         graphql: true,
+
     })
 )
 
@@ -25,5 +28,7 @@ app.use(
 const PORT = process.env.PORT || 3000 //<---- mongodb default
 
 app.listen(PORT, () => {
+
     console.log(`--- SERVER RUNNING ON ${PORT}: http://localhost:5000/graphql`)
+    
 })
